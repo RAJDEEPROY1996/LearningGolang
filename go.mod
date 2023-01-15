@@ -1,3 +1,3 @@
-module example.com/hello
+module ticketBookingSystem
 
 go 1.19
