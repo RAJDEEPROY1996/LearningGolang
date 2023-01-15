@@ -1,0 +1,131 @@
+PS C:\Users\RAJDEEP\Desktop\JOB\Ahom Limited\Task\Golang\schoolAddmissionSystem> go run .
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+1
+Welcome To Kendriya Vidyalaya
+Address - Kolkata, West Bengal, India
+Affiliated to CBSE
+Class 1 To Class 12
+Total Seats in class 1 is 50
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+2
+8 teacher are there for English
+6 teacher are there for Hindi
+9 teacher are there for Mathematics
+10 teacher are there for Science
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+4
+Remaining seat: 50
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+3
+Welcome to Addmission Section
+Enter First Name of Student :
+Rajdeep
+Enter Last Name of Student :
+Roy
+Enter Email of Student :
+rrajdeep2@gmail.com
+Enter Mobile No of Student :
+8250184021
+Enter Date of Birth (ddMMyyyy) No of Student :
+16031996
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+4
+Remaining seat: 49
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+5
+List of Addmitted Student in the School [{Rajdeep Roy rrajdeep2@gmail.com 16031996 8250184021}]
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+3
+Welcome to Addmission Section
+Enter First Name of Student :
+Ram
+Enter Last Name of Student :
+Charan
+Enter Email of Student :
+ram@gmail.com
+Enter Mobile No of Student :
+8420264126
+Enter Date of Birth (ddMMyyyy) No of Student :
+17101997
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+4
+Remaining seat: 48
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+2
+8 teacher are there for English
+6 teacher are there for Hindi
+9 teacher are there for Mathematics
+10 teacher are there for Science
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+5
+List of Addmitted Student in the School [{Rajdeep Roy rrajdeep2@gmail.com 16031996 8250184021} {Ram Charan ram@gmail.com 17101997 8420264126}]
+        Press -> 1 to see School Details
+        Press -> 2 to see Teacher details
+        Press -> 3 Addmission details
+        Press -> 4 to see Remaining Seats
+        Press -> 5 to see all Student's Detail List
+         XXXXXXXXXXXXXXXXXX--- Press any no greater than 5 to exit ---XXXXXXXXXXXXXXXXXX
+Enter Your Choice:
+6
+Wrong Choice
+PS C:\Users\RAJDEEP\Desktop\JOB\Ahom Limited\Task\Golang\schoolAddmissionSystem>
