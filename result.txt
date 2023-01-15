@@ -1,0 +1,36 @@
+PS C:\Users\RAJDEEP\Desktop\JOB\Ahom Limited\Task\Golang\ticketBookingSystem> go run .
+Welcome to the Blockchain Seminar
+Total Conference Tickets: 50
+Enter Your First Name Rajdeep
+Enter Your Last Name Roy
+Enter No of Tickets to buy 45
+time is  2023 01 15
+string
+Full Name is:  Rajdeep Roy
+Total list of Buyer [Rajdeep Roy                                                 ]
+        See You ----- Rajdeep ----- in the Conference
+Date of Purchase  2023 01 15
+Total Number of Buyer 1
+Total list of Time of Purchase [2023 01 15]
+Remaining tickets are 5
+Enter Your First Name Ram
+Enter Your Last Name Charan
+Enter No of Tickets to buy 0
+At least you need one ticket to buy
+Enter Your First Name Ram
+Enter Your Last Name Charan
+Enter No of Tickets to buy 6
+Less tickets available..
+Enter Your First Name Ram
+Enter Your Last Name Charan
+Enter No of Tickets to buy 5
+time is  2023 01 15
+string
+Full Name is:  Ram Charan
+Total list of Buyer [Rajdeep Roy Ram Charan                                                ]
+        See You ----- Ram ----- in the Conference
+Date of Purchase  2023 01 15
+Total Number of Buyer 2
+Total list of Time of Purchase [2023 01 15 2023 01 15]
+Remaining tickets are 0
+PS C:\Users\RAJDEEP\Desktop\JOB\Ahom Limited\Task\Golang\ticketBookingSystem>
