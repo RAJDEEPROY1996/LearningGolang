@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Ticket Booking Details</title>
+    <style>
+        table{
+            width: 100%;
+        }
+        th,td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body style = "background-color: lightgreen; ">
+    <center>
+        <h1>All Ticket Booking Details</h1><br>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Email</th>
+            </tr>
+            {{range .}}            
+            <br>
+            <tr>
+                <td>{{.FirstName}}</td>
+                <td>{{.LastName}}</td>
+                <td>{{.Address}}</td>
+                <td>{{.Email}}</td>
+            </tr>
+            {{end}}
+        </table>
+        <br><br>
+        <h1><a href="/">Go To Home Page</a></h1>
+    </center>
+</body>
+</html>

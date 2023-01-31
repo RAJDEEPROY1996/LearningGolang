@@ -22,7 +22,7 @@ func getMySQLDB() *sql.DB {
 	return db
 }
 
-const totalConferenceTicket int = 50
+const totalConferenceTicket int = 2
 
 type ticketDetails struct {
 	FirstName   string
@@ -41,6 +41,7 @@ func main() {
 	http.HandleFunc("/processPost", processPostHandler)
 	http.HandleFunc("/ticketDetails", ticketDetailsHandler)
 	http.HandleFunc("/fetchDetail", fetchDetailHandler)
+	http.HandleFunc("/allTicketDetails", allTicketDetailsHandler)
 	fmt.Println("Connecting to Server ...")
 	http.ListenAndServe(":8000", nil)
 }
@@ -79,13 +80,13 @@ func processPostHandler(w http.ResponseWriter, r *http.Request) {
 	if !t {
 		tpl.ExecuteTemplate(w, "failed.html", s)
 	} else {
-		purchasedTickets = append(purchasedTickets, d)
-		fmt.Println(purchasedTickets)
 		_, err := db.Exec("insert into conference(firstName,lastName,address,email,noOfTickets)values(?,?,?,?,?)", d.FirstName, d.LastName, d.Address, d.Email, d.NoOfTickets)
 		if err != nil {
 			fmt.Println(err.Error())
-			tpl.ExecuteTemplate(w, "failed.html", err.Error())
+			tpl.ExecuteTemplate(w, "failed.html", "Already Booked using This email")
 		} else {
+			purchasedTickets = append(purchasedTickets, d)
+			fmt.Println(purchasedTickets)
 			tpl.ExecuteTemplate(w, "thanks.html", d)
 		}
 	}
@@ -105,8 +106,8 @@ func checking(d ticketDetails) (bool, string) {
 	}
 
 	if remainingConferenceTickets()-d.NoOfTickets < 0 {
-		fmt.Println("Low Tickets available")
-		return false, "Low Tickets available"
+		fmt.Println("No Tickets available")
+		return false, "No Tickets available"
 	}
 	return true, "OK"
 }
@@ -118,10 +119,8 @@ func ticketDetailsHandler(w http.ResponseWriter, r *http.Request) {
 func fetchDetailHandler(w http.ResponseWriter, r *http.Request) {
 	db = getMySQLDB()
 	var d ticketDetails
-	d.Email = r.FormValue("email")
-
-	fmt.Println(r.FormValue("submit"))
 	if r.FormValue("submit") == "fetch" {
+		d.Email = r.FormValue("email")
 		err := db.QueryRow("select * from conference where email = ?", d.Email).Scan(&d.FirstName, &d.LastName, &d.Address, &d.Email, &d.NoOfTickets) //for query
 		if err != nil {
 			fmt.Println(err.Error())
@@ -132,7 +131,6 @@ func fetchDetailHandler(w http.ResponseWriter, r *http.Request) {
 	} else if r.FormValue("submit") == "correction" {
 		d.NoOfTickets = 1
 		d.Email = r.FormValue("email2")
-		fmt.Println("email", d.Email)
 		d.FirstName = r.FormValue("firstName")
 		d.LastName = r.FormValue("lastName")
 		d.Address = r.FormValue("address")
@@ -144,8 +142,57 @@ func fetchDetailHandler(w http.ResponseWriter, r *http.Request) {
 			if output == 0 {
 				tpl.ExecuteTemplate(w, "failed.html", "This Email Id doesnot exist")
 			} else {
+				for i, value := range purchasedTickets {
+					if value.Email == d.Email {
+						purchasedTickets[i].FirstName = d.FirstName
+						purchasedTickets[i].LastName = d.LastName
+						purchasedTickets[i].Address = d.Address
+					}
+				}
+				fmt.Println("After Correction: ", purchasedTickets)
+				tpl.ExecuteTemplate(w, "thanks.html", d)
+			}
+		}
+	} else if r.FormValue("submit") == "delete" {
+		d.Email = r.FormValue("email3")
+		result, _ := db.Exec("delete from conference where email = ?", d.Email)
+		output, err := result.RowsAffected()
+		if err != nil {
+			tpl.ExecuteTemplate(w, "failed.html", "Ticket Cancelling failed. Kindly Try again later")
+		} else {
+			if output == 0 {
+				tpl.ExecuteTemplate(w, "failed.html", "This Email Id doesnot exist")
+			} else {
+				for i, value := range purchasedTickets {
+					if value.Email == d.Email {
+						purchasedTickets = append(purchasedTickets[:i], purchasedTickets[i+1:]...)
+					}
+				}
+				d.NoOfTickets = 0
+				fmt.Println("After Deletion: ", purchasedTickets)
 				tpl.ExecuteTemplate(w, "thanks.html", d)
 			}
 		}
 	}
+}
+
+func allTicketDetailsHandler(w http.ResponseWriter, r *http.Request) {
+	db = getMySQLDB()
+	var d []ticketDetails
+	res, err := db.Query("select * from conference")
+	if err != nil {
+		log.Fatal(err)
+		tpl.ExecuteTemplate(w, "failed.html", "Error while fetching Data from Database")
+	} else {
+		var e ticketDetails
+		for res.Next() {
+			err := res.Scan(&e.FirstName, &e.LastName, &e.Address, &e.Email, &e.NoOfTickets)
+			if err != nil {
+				log.Fatal(err)
+			}
+			d = append(d, e)
+		}
+		tpl.ExecuteTemplate(w, "allTicketDetails.html", d)
+	}
+
 }

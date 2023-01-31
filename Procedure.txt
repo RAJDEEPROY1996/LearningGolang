@@ -1,3 +1,4 @@
+Procedure to connect to MySql with Golang Server:
 1. To connect MySql-
     a. install XAMPP 
     b. open MySql Folder 

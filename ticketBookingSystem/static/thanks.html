@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanks For Registering</title>
 </head>
-<body>
-    <center>
+<body style="background-color: lime;">
+    <center>        
+        {{if eq .NoOfTickets 1}}}
         <h1>Thank You {{.FirstName}} {{.LastName}} For filling Up the Registration Form</h1>
         <h1>You have purchased {{.NoOfTickets}} ticket for the email address {{.Email}}</h1>
-        <h1><a href="/">Go To ConferencePage</a></h1>
+        {{else}}
+        <h1>Your Booking Has been <b>Cancelled</b> You will get refund within 3 working days</h1>
+        <h1>You have purchased {{.NoOfTickets}} ticket for the email address {{.Email}}</h1>        
+        {{end}}
+        <h1><a href="/">Go To Home Page</a></h1>
     </center>    
 </body>
 </html>

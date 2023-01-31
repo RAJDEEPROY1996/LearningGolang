@@ -1,5 +1,20 @@
-- User can book ticket through the website
-- In the form fillup section, user should have atleast 3 character in their first name, last name
-- Address should have atleast 4 character
+- User can book ticket through the website.
+- In the form fillup section, user should have atleast 3 character in their first name, last name.
+- Address should have atleast 4 character.
 - If the user book his ticket, then the user is will not allowed to book ticket again.
- 
+- Every user can buy 1 ticket.
+- In the main index.html page, there is information about the conference with total no of ticket available for booking, place of conference and topic of conference.
+- In this index.html page, user can redirect to buy ticket page, queries related to tickets and information related to all ticket booking.
+- In buy ticket page[postForm] - user can buy tickets by filling up the form.
+- In the booking related page[ticketDetails] - user can fetch ticket details by providing Email id, correction of ticket booking form and even cancel the booking.
+- In all booking page [allTicketDetails] - user can find all the user who have registered in the conference.  
+
+
+Database - MySql Database have been used with one table conference with 5 columns: 
+            - `firstName` varchar(255) DEFAULT NULL,
+            - `lastName` varchar(255) DEFAULT NULL,
+            - `address` varchar(255) DEFAULT NULL,
+            - `email` varchar(255) NOT NULL,
+            - `noOfTickets` int(11) DEFAULT NULL
+
+            Primary Key - Email

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicketDetails</title>
 </head>
-<body>
+<body style="background-color: lightyellow;">
     <center>
-        <h1>TicketDetails</h1>
+        <h1>Fetch Ticket Details</h1>
         <form action="/fetchDetail" method="POST">
         <label for = "email">Email</label>
         <input type="text" id="email" name = "email" value= "rrajdeep2@gmail.com"><br>
@@ -16,19 +16,30 @@
     </center>
         <br>
         <br>
-        <h1>Correction in Ticket Booking Details</h1>
+        
         <center>
-            <h1>TicketDetails</h1>
+            <h1>Correction in Ticket Booking Details</h1>
             <form action="/fetchDetail" method="POST">
             <label for = "email">Enter Registered Email </label>
-            <input type="text" id="email" name = "email2" value= "rrajdeep2@gmail.com"><br>
+            <input type="text" id="email" name = "email2" value= "rrajdeep2@gmail.com"><br><br>
             <label for = "firstName" >First Name</label>
-            <input type="text" id="firstName" name = "firstName" value= "Rajdeep">
+            <input type="text" id="firstName" name = "firstName" value= "Rajdeep"><br><br>
             <label for = "lastName">Last Name</label>
             <input type="text" id="lastName" name = "lastName" value= "Roy"><br><br>
             <label for = "address">Address</label>
-            <input type="text" id="address" name = "address" value= "Kolkata"><br>
+            <input type="text" id="address" name = "address" value= "Kolkata"><br><br>
             <input type = "submit" name="submit" value="correction">
         </center>
+
+        <br>
+        <br>
+        <center>
+            <h1>Delete Ticket</h1>
+            <form action="/fetchDetail" method="POST">
+            <label for = "email">Email</label>
+            <input type="text" id="email" name = "email3" value= "rrajdeep2@gmail.com"><br>
+            <input type = "submit" name="submit" value="delete">
+        </center>
+
 </body>
 </html>
