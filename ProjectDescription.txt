@@ -1,0 +1,5 @@
+- User can book ticket through the website
+- In the form fillup section, user should have atleast 3 character in their first name, last name
+- Address should have atleast 4 character
+- If the user book his ticket, then the user is will not allowed to book ticket again.
+ 

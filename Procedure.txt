@@ -1,0 +1,49 @@
+1. To connect MySql-
+    a. install XAMPP 
+    b. open MySql Folder 
+    c. open Bin Folder
+    d. open cmd
+    e. bin> mysql -u root
+    f. create a Database - create Database tickets;
+    g. delete a Database - drop Database tickets;
+    h. select a Database - use tickets;
+    i. create a table - create table conference(firstName varchar(255),lastName varchar(255),address varchar(255),email varchar(255),noOfTickets int, primary key (email));
+    j. delete a table - drop table conference;
+    k. truncate table [delete the data not the table] - truncate table conference;
+    l. show all tables in the Database - show tables;
+    m. show table structure - desc conference;
+    n. install mysql - go get github.com/go-sql-driver/mysql 
+    o. set up Database in golang - 
+                var db *sql.DB
+                func getMySQLDB() *sql.DB {
+                    db, err := sql.Open("mysql", "root:@(127.0.0.1:3306)/conference?parseTime=true")    //"username:password@(port)/DatabaseName?parseTime =true"
+                    if err != nil {
+                        log.Fatal((err))
+                    }
+                    return db
+                }
+                In the function where we want to use Database -     db = getMySQLDB()
+                _,err := db.Exec("insert into conference(firstName,lastName,address,email,noOfTickets)values(?,?,?,?,?)",firstName,lastName,address,email,noOfTickets)
+    p. update a record
+            result, err := db.Exec("update conference set firstName = ?, lastName = ?, address =? where email = ?", d.FirstName, d.LastName, d.Address, d.Email)
+		if err != nil {
+			fmt.Println(err.Error())
+			tpl.ExecuteTemplate(w, "failed.html", "Modification failed. Kindly Try again later")
+		} else {
+			_, err := result.RowsAffected()
+			if err != nil {
+				tpl.ExecuteTemplate(w, "failed.html", "Modification failed. Kindly Try again later")
+			} else {
+				tpl.ExecuteTemplate(w, "thanks.html", d)
+			}
+		}
+    q.
+    r.
+    s.
+    t.
+    u.
+    v.
+    w.
+    x.
+    y.
+    z.
