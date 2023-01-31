@@ -10,11 +10,19 @@
 - In all booking page [allTicketDetails] - user can find all the user who have registered in the conference.  
 
 
-Database - MySql Database have been used with one table conference with 5 columns: 
-            - `firstName` varchar(255) DEFAULT NULL,
-            - `lastName` varchar(255) DEFAULT NULL,
-            - `address` varchar(255) DEFAULT NULL,
-            - `email` varchar(255) NOT NULL,
-            - `noOfTickets` int(11) DEFAULT NULL
+Database - 
 
-            Primary Key - Email
+Go Folder - It contains all the files that are required to set up the Backend.
+
+Static Folder - It contains all the files that are required for Frontend
+
+tickets Folder - It contains all the files that are created for Database.
+               -MySql Database have been used with one table conference with 5 columns: 
+                    - `firstName` varchar(255) DEFAULT NULL,
+                    - `lastName` varchar(255) DEFAULT NULL,
+                    - `address` varchar(255) DEFAULT NULL,
+                    - `email` varchar(255) NOT NULL,
+                    - `noOfTickets` int(11) DEFAULT NULL
+
+                        Primary Key - Email
+                        
